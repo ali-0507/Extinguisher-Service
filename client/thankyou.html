@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Thank You | The Fire Wala</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            background: #f7f9fc;
+            color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* MAIN CARD */
+
+        .thankyou-card {
+
+            width: 100%;
+            max-width:775px;
+            height:800px;
+            background:#004890;
+            border-radius: 25px;
+            padding: 30px 55px 38px;
+            text-align: center;
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.08);
+            overflow:hidden;
+        }
+
+        .thankyou-logo {
+            width: 100%;
+            height:150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+            overflow:visible
+        }
+
+        .thankyou-logo img {
+            display: block;
+            width: 430px;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1.25);
+        }
+
+        /* SUCCESS ICON */
+
+        .success-icon {
+
+            width: 100px;
+            height: 100px;
+            margin: 5px auto 22px;
+            border-radius: 50%;
+            background: #eaf8ef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-icon i {
+
+            font-size:50px;
+
+            color: #22a447;
+        }
+
+        /* HEADING */
+
+        .thankyou-card h1 {
+
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight:700;
+            color: #fdfeff;
+        }
+
+        /* TEXT */
+
+        .thankyou-card .main-text {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e6e4e4;
+            max-width:650px;
+            margin: 0 auto 25px;
+        }
+
+        /* SMALL MESSAGE */
+
+        .follow-text {
+
+             max-width: 650px;
+            margin: 0 auto 25px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e8f1fa;
+        }
+
+        /* WHATSAPP BUTTON */
+
+        .whatsapp-campaign {
+
+            width: 100%;
+            max-width: 500px;
+            min-height: 64px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            background: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .whatsapp-campaign:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-campaign i {
+            font-size: 27px;
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 18px;
+            padding: 11px 25px;
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+}
+
+        .home-btn:hover {
+
+            background: #ffffff;
+
+            color: #075196;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+                align-items: center;
+            }
+            .thankyou-logo {
+               height: 115px;
+               margin-bottom: 5px;
+            }
+
+           .thankyou-logo img {
+            width: 330px;
+            max-width: 100%;
+            transform: scale(1.2);
+            }
+
+            .thankyou-card {
+                width: 100%;
+                padding: 25px 20px 30px;
+                border-radius: 20px;
+            }
+
+             .success-icon {
+
+        width: 78px;
+
+        height: 78px;
+
+        margin: 5px auto 20px;
+    }
+
+    .success-icon i {
+
+        font-size: 40px;
+    }
+
+
+    /* HEADING */
+
+    .thankyou-card h1 {
+
+        font-size: 28px;
+
+        line-height: 1.25;
+
+        margin-bottom: 16px;
+    }
+
+
+    /* MAIN TEXT */
+
+    .thankyou-card .main-text {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        margin-bottom: 22px;
+    }
+
+
+    /* WHATSAPP TEXT */
+
+    .follow-text {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* WHATSAPP BUTTON */
+
+    .whatsapp-campaign {
+
+        min-height: 58px;
+
+        padding: 13px 15px;
+
+        font-size: 15px;
+
+        gap: 9px;
+    }
+
+    .whatsapp-campaign i {
+
+        font-size: 23px;
+    }
+
+
+    /* HOME BUTTON */
+
+    .home-btn {
+
+        margin-top: 15px;
+
+        font-size: 14px;
+
+        padding: 10px 20px;
+    }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <main class="thankyou-card">
+
+        <div class="thankyou-logo">
+            <img src="assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
+        </div>
+
+        <!-- SUCCESS ICON -->
+
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+
+        <!-- HEADING -->
+
+        <h1>
+            Thank You for Booking Service!
+        </h1>
+        <!-- MAIN MESSAGE -->
+
+        <p class="main-text">
+
+            Your service request has been submitted
+            successfully.
+
+            Our team at <strong>The Fire Wala</strong>
+            will review your requirements and contact
+            you shortly.
+
+        </p>
+        <!-- WHATSAPP MESSAGE -->
+
+        <p class="follow-text">
+
+            Want to stay connected with us?
+
+            Join our WhatsApp community to receive
+            updates, useful fire-safety information and
+            service-related updates.
+
+        </p>
+        <!-- WHATSAPP CAMPAIGN -->
+
+        <a
+            href="https://whatsapp.com/channel/0029VaxKPAFFCCoXWEJQgk2a"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-campaign">
+
+            <i class="fab fa-whatsapp"></i>
+
+            Get Fire safety updates on whatsapp
+
+        </a>
+        <!-- HOME BUTTON -->
+        <br>
+
+        <a
+            href="index.html"
+            class="home-btn">
+
+            Back to Website
+
+        </a>
+
+    </main>
+
+</body>
+
+</html>

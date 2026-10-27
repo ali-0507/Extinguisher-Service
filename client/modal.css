@@ -1,0 +1,260 @@
+.modal{
+position:fixed;
+inset:0;
+background:#020617c7;
+backdrop-filter:blur(5px);
+-webkit-backdrop-filter:blur(5px);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+padding:20px
+}
+.modal.show{
+display:flex
+}
+.modal .form{
+position:relative;
+width:100%;
+max-width:600px;
+max-height:90vh;
+overflow-y:auto;
+background:#fff;
+border-radius:12px;
+padding:28px
+}
+.close{
+position:absolute;
+right:17px;
+top:12px;
+border:0;
+background:none;
+font-size:1.7rem;
+line-height:1;
+cursor:pointer;
+color:#141414;
+z-index:5;
+padding:2px 6px
+}
+.form h2{
+margin-bottom:4px
+}
+.intro{
+color:var(--muted);
+font-size:.86rem;
+margin-bottom:20px
+}
+.fg{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:13px
+}
+.form-group{
+display:flex;
+flex-direction:column;
+gap:5px;
+min-width:0
+}
+.form-group.full{
+grid-column:1/-1
+}
+.form-group label{
+font-size:.78rem;
+font-weight:700
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+width:100%;
+border:1px solid #dbe0e7;
+border-radius:9px;
+padding:10px 11px;
+font:inherit;
+outline:none;
+box-sizing:border-box
+}
+.form-group textarea{
+min-height:100px;
+resize:vertical
+}
+.field{
+display:flex;
+flex-direction:column;
+gap:5px
+}
+.full{
+grid-column:1/-1
+}
+.field label{
+font-size:.78rem;
+font-weight:700
+}
+.field input,
+.field select,
+.field textarea{
+border:1px solid #dbe0e7;
+border-radius:9px;
+padding:11px;
+font:inherit;
+outline:none
+}
+.field textarea{
+min-height:100px;
+resize:vertical
+}
+/* MOBILE MODAL */
+@media(max-width:600px){
+.modal{
+padding:10px;
+align-items:center;
+overflow:hidden
+}
+.modal .form{
+width:100%;
+max-width:370px;
+max-height:calc(100vh - 20px);
+padding:20px 17px 18px;
+border-radius:15px;
+overflow-y:auto;
+overscroll-behavior:contain
+}
+.close{
+right:10px;
+top:8px;
+font-size:1.5rem;
+padding:2px 5px
+}
+.form h2{
+font-size:21px;
+line-height:1.2;
+margin-bottom:3px;
+padding-right:28px
+}
+.intro{
+font-size:12px;
+line-height:1.45;
+margin-bottom:13px;
+padding-right:15px
+}
+.fg{
+grid-template-columns:1fr 1fr;
+gap:9px 10px
+}
+.form-group{
+gap:3px
+}
+.form-group label{
+font-size:12px;
+line-height:1.25
+}
+.form-group input,
+.form-group select{
+height:38px;
+padding:7px 9px;
+font-size:12px;
+border-radius:7px
+}
+.form-group textarea{
+min-height:65px;
+padding:7px 9px;
+font-size:12px
+}
+.input-hint{
+font-size:9px;
+line-height:1.2
+}
+.field.full{
+grid-column:1/-1
+}
+.field.full .btn{
+height:40px;
+font-size:13px
+}
+}
+/* SMALL MOBILE */
+@media(max-width:380px){
+.modal{
+padding:8px
+}
+.modal .form{
+max-width:350px;
+max-height:calc(100vh - 16px);
+padding:18px 14px 15px;
+border-radius:14px
+}
+.close{
+right:8px;
+top:6px;
+font-size:1.4rem
+}
+.form h2{
+font-size:19px;
+padding-right:25px
+}
+.intro{
+font-size:11px;
+line-height:1.4;
+margin-bottom:11px
+}
+.fg{
+gap:8px
+}
+.form-group label{
+font-size:11px
+}
+.form-group input,
+.form-group select{
+height:36px;
+padding:6px 8px;
+font-size:11px
+}
+.input-hint{
+font-size:8px
+}
+.field.full .btn{
+height:38px;
+font-size:12px
+}
+}
+/* VERY SMALL MOBILE */
+@media(max-width:330px){
+.modal{
+padding:6px
+}
+.modal .form{
+max-width:320px;
+max-height:calc(100vh - 12px);
+padding:16px 12px 13px
+}
+.close{
+right:6px;
+top:5px;
+font-size:1.3rem
+}
+.form h2{
+font-size:18px
+}
+.intro{
+font-size:10px;
+margin-bottom:9px
+}
+.fg{
+gap:7px
+}
+.form-group label{
+font-size:10px
+}
+.form-group input,
+.form-group select{
+height:34px;
+font-size:10px;
+padding:5px 7px
+}
+.input-hint{
+font-size:7px
+}
+.field.full .btn{
+height:36px;
+font-size:11px
+}
+}

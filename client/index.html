@@ -1,0 +1,1230 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Fire Wala | Fire Extinguisher Supply & Refilling</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="stats.css">
+  <link rel="stylesheet" href="clientSection.css">
+  <link rel="stylesheet" href="quoteForm.css">
+  <link rel="stylesheet" href="visualProcess.css">
+  <link rel="stylesheet" href="rating.css">
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="certificate.css">
+  <link rel="stylesheet" href="industry.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="cylinderDelivery.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KWG9BTJZ');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWG9BTJZ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navbar section -->
+  
+<nav class="nav">
+  <div class="container-nav navin">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
+    </div>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"
+      aria-controls="navlinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="navlinks" id="navlinks">
+      <a href="#clients">Our Clients</a>
+      <a href="#industries">Industries we serve</a>
+      <a href="#quoteForm">Form</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+
+      <!-- Mobile-only Book a Service button -->
+      <button class="btn primary mobile-book" type="button" onclick="openModal()">
+        Get a free quote
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <!-- Hero section -->
+
+  <header class="hero" id="why">
+    <div class="container hero-in">
+    
+      <!-- LEFT FORM -->
+
+      <div class="quote-form-card">
+
+        <div class="quote-form-heading">
+          <div>
+            <h3>Book a Service</h3>
+            <p>Fill in your details below.</p>
+          </div>
+
+        </div>
+
+        <form id="quoteForm">
+
+          <div class="quote-form-grid">
+
+            <div class="form-group">
+              <label for="clientName">Full Name <span class="star">*</span></label>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your name"
+               maxlength="50" pattern="[A-Za-z ]+"autocomplete="name" title="Name should contain alphabets and spaces only" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="star">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+              maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" title="Please enter exactly 10 digits." required>
+            </div>
+
+            <div class="form-group">
+              <label for="heroEmail">
+                Email id <span class="star">*</span>
+              </label>
+              <input type="email" id="heroEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company">
+                Company / Organization
+              </label>
+              <input type="text" id="company" name="company" placeholder="Enter company name"  maxlength="100" pattern="[A-Za-z ]*">
+            </div>
+
+            <!-- <div class="form-group">
+              <label for="quantity">
+                Number of Extinguishers
+              </label>
+              <input type="number" id="quantity" name="quantity" min="1" placeholder="Minimum quantity: 1">
+              <small class="input-hint">
+                Minimum: 1
+              </small>
+            </div> -->
+
+            <div class="form-group">
+              <label for="serviceType">
+                Service Required <span class="star">*</span>
+              </label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select service</option>
+                <option value="Refilling">Refilling</option>
+                <option value="AMC Service">AMC Service</option>
+                <option value="Hydrant & Sprinkle">Hydrant & Sprinkler</option>
+                <option value="Refilling and Inspection">
+                  Refilling & Inspection
+                </option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="quote-form-footer">
+            <span>
+              <span class="star">*</span> Required fields
+            </span>
+            <button type="submit" class="btn primary quote-submit">
+              Submit your quote
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="hero-content">
+
+        <h1 class="heading">
+            Fire Extinguisher Sales & Services 
+          <span>in Raipur</span>
+        </h1>
+
+        <div class="eyebrow">
+          WHY CHOOSE OUR SERVICE?
+        </div>
+
+        <ul class="hero-list">
+          <li>Quality Products – Fire extinguishers for your safety needs.</li>
+          <li>Reliable Refilling – Keep your extinguishers ready for emergencies.</li>
+          <li>Professional Service – Support for your fire safety requirements.</li>
+          <li>Hassle-Free Process – Easy quotation and service booking.</li>
+          <li>Customer-Focused Support – Solutions tailored to your needs.</li>
+        </ul>
+
+        <!-- CTA BUTTONS -->
+        <div class="hero-cta">
+
+          <div class="actions">
+            <a class="btn ghost call-btn" href="tel:+917772078610">
+              <i class="fas fa-phone"></i>
+              Call for consultation</a>
+
+            <!-- WHATSAPP CTA -->
+            <a class="btn whatsapp-btn"
+              href="https://wa.me/917772078610?text=Hello%20The%20Fire%20Wala%2C%20I%20would%20like%20to%20enquire%20about%20fire%20extinguisher%20supply%20and%20refilling%20services."
+              target="_blank" rel="noopener noreferrer">
+
+              <span class="whatsapp-icon">
+                <i class="fab fa-whatsapp" style="color: #ebf9f0; font-size: 30px;"></i>
+              </span>
+              Chat on WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="hero-note">
+          Regular inspection, maintenance and refilling help
+          keep extinguishers operational, maintained and
+          ready for emergency use.
+        </div>
+
+      </div>
+
+      
+    </div>
+  </header>
+
+  <!-- COMPANY STATS SECTION -->
+  <section class="stats-section">
+    <div class="stats-container">
+
+      <div class="stat-item">
+        <h2>10<span>+</span></h2>
+        <p>Years of Fire Safety<br>Excellence</p>
+      </div>
+
+      <div class="stat-item">
+        <h2>10,000<span>+</span></h2>
+        <p> EXTINGUISHERS<br>SERVICED</p>
+      </div>
+
+      <div class="stat-item">
+        <h2>700<span>+</span></h2>
+        <p>CLIENTS<br>SERVED</p>
+      </div>
+
+      <div class="stat-item">
+        <h2>24/7<span></span></h2>
+        <p>SERVICE ON<br>CALL SUPPORT</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CERTIFICATES -->
+<section class="certifications" id="certifications">
+    <div class="container">
+        <!-- HEADER -->
+        <div class="cert-header">
+            <span class="kicker">
+                Our Certificates
+            </span>
+            <p>
+                Our certifications reflect our commitment to
+                professional standards and fire safety.
+            </p>
+        </div>
+        <!-- CERTIFICATE CAROUSEL / GRID -->
+        <div class="cert-grid">
+            <!-- CERTIFICATE 1 -->
+            <div class="cert-card">
+                <img
+                    src="./assests/MSME CERTIFICATE _page-0001.jpg"
+                    alt="MSME Certificate"
+                    loading="lazy">
+            </div>
+            <!-- CERTIFICATE 2 -->
+            <div class="cert-card">
+                <img
+                    src="./assests/ISO CERTIFICATE _page-0001.jpg"
+                    alt="ISO Certificate"
+                    loading="lazy">
+            </div>
+            <!-- CERTIFICATE 3 -->
+            <div class="cert-card">
+                <img
+                    src="./assests/Trade Mark Registration Certificate _page-0001.jpg"
+                    alt="Trade Mark Registration Certificate"
+                    loading="lazy">
+            </div>
+        </div>
+
+        <!-- MOBILE CAROUSEL HINT -->
+        <p class="cert-swipe-text">
+            <i class="fas fa-arrows-left-right"></i>
+            Swipe to view certificates
+        </p>
+
+    </div>
+
+</section>
+
+ <!-- OUR CLIENTS SECTION -->
+
+<section class="clients-section" id="clients">
+
+    <div class="container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="clients-header">
+
+            <div class="clients-kicker">
+                OUR CLIENTS
+            </div>
+
+            <h3>
+                Trusted by Leading Companies
+            </h3>
+
+            <p>
+                We provide fire extinguisher supply, servicing and
+                refilling support to organizations across different
+                industries.
+            </p>
+
+        </div>
+
+
+        <!-- CLIENT CAROUSEL -->
+
+        <div class="clients-carousel">
+
+
+            <!-- LEFT ARROW -->
+
+            <button
+                class="client-arrow client-prev"
+                type="button"
+                aria-label="Previous clients">
+
+                <i class="fas fa-chevron-left"></i>
+
+            </button>
+
+
+            <!-- VIEWPORT -->
+
+            <div class="clients-viewport">
+
+                <!-- TRACK -->
+
+                <div class="clients-track">
+                    <!-- CLIENT 1 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/icon.jpg"
+                            alt="Icon SolarEN"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 2 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/yashwant.jpg"
+                            alt="Yashwant Hospital"
+                            loading="lazy">
+                    </div>
+
+                    <!-- CLIENT 3 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/shriNathji.jpg"
+                            alt="Shri Nath Ji Hospital"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 4 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/balaji.jpg"
+                            alt="Balaji Hospital"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 5 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/zora.jpg"
+                            alt="Zora The Mall"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 6 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/neco.png"
+                            alt="Neco"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 7 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/avinash.jpg"
+                            alt="Avinash"
+                            loading="lazy">
+
+                    </div>
+                    <!-- CLIENT 8 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/ekta.jpg"
+                            alt="Ekta Child Hospital"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 9 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/dks.jpg"
+                            alt="DKS"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 10 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/apollo.jpg"
+                            alt="Apollo Sugar Clinics"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 11 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/holycross.png"
+                            alt="Holy Cross School"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 12 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/shivom.jpg"
+                            alt="Shivom Vidyapeeth"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 13 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/laxmi.jpg"
+                            alt="Laxmi Rice Mill"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 14 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/suyashHospital.webp"
+                            alt="Suyash Hospital"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 15 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/sinoflex.png"
+                            alt="Sinoflex Chemicals Pvt Ltd"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 16 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/shivShakti.jpg"
+                            alt="Shiv Shakti Hospital"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 17 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/colors.jpg"
+                            alt="Colors Mall"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 18 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/cps.jpg"
+                            alt="Chhattisgarh Public School"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 19 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/anand.jpg"
+                            alt="Anand Jewellers"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 20 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/pvr.png"
+                            alt="PVR INOX"
+                            loading="lazy">
+                    </div>
+                    <!-- CLIENT 21 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/lotus.jpg"
+                            alt="Lotus Electronics"
+                            loading="lazy">
+
+                    </div>
+                    <!-- CLIENT 22 -->
+                    <div class="client-card">
+                        <img
+                            src="./assests/clients/bharat.webp"
+                            alt="Bharat"
+                            loading="lazy">
+                    </div>
+                  </div>
+            </div>
+
+            <!-- RIGHT ARROW -->
+            <button
+                class="client-arrow client-next"
+                type="button"
+                aria-label="Next clients">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <!-- PAGINATION DOTS -->
+        <div
+            class="client-dots"
+            aria-label="Client carousel navigation">
+        </div>
+    </div>
+</section>
+
+
+
+  <section class="quote-section" id="quote-form">
+    <div class="quote-container" id="form">
+
+      <!-- LEFT CONTENT -->
+      <div class="quote-content">
+
+        <span class="kicker">Book a service</span>
+
+        <h1>
+          Need Fire Extinguisher Services?
+        </h1>
+
+        <p>
+          Share your requirements with us. Our team will
+          contact you with a suitable fire extinguisher
+          service quotation.
+        </p>
+
+        <div class="quote-points">
+          <p>✓ Fire Extinguisher Refilling</p>
+          <p>✓ Inspection & Maintenance</p>
+          <p>✓ Service Report & Documentation</p>
+        </div>
+
+        <a class="btn whatsapp-btn"
+          href="https://wa.me/917772078610?text=Hello%20The%20Fire%20Wala%2C%20I%20would%20like%20to%20enquire%20about%20fire%20extinguisher%20supply%20and%20refilling%20services."
+          target="_blank" rel="noopener noreferrer">
+
+          <span class="whatsapp-icon">
+            <i class="fab fa-whatsapp" style="color: #ebf9f0; font-size: 30px;"></i>
+          </span>
+          Chat on WhatsApp
+        </a>
+
+        <button class="btn primary" type="button" onclick="openModal()">
+          Get a Free Quote
+        </button>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="hero-slider">
+
+          <div class="hero-slide active" onclick="openModal()">
+            <img src="./assests/comparisonImg.png">
+          </div>
+
+          <div class="hero-slide" onclick="openModal()">
+            <img src="./assests/sliderImg1.png">
+          </div>
+
+          <div class="hero-slide" onclick="openModal()">
+            <img src="./assests/sliderImg2.png" alt="Fire safety service">
+          </div>
+
+          <div class="hero-slide" onclick="openModal()">
+            <img src="./assests/sliderImg3.png">
+          </div>
+
+        </div>
+
+        <!-- SLIDER DOTS -->
+        <div class="slider-dots">
+          <button class="slider-dot active" aria-label="Show image 1"></button>
+          <button class="slider-dot" aria-label="Show image 2"></button>
+          <button class="slider-dot" aria-label="Show image 3"></button>
+          <button class="slider-dot" aria-label="Show image 4"></button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Who need this service -->
+
+<section id="industries" class="industries">
+  <div class="container">
+    <div class="head" id="service">
+      <div class="clients-kicker">Industries we serve</div>
+      <h1 class="extType">Who should get their fire extinguishers serviced?</h1>
+      <p>Requirement varies with building type, hazards, equipment and site conditions.</p>
+    </div>
+    <div class="grid four">
+      <div class="industry">
+        <img src="./assests/factory.png" alt="Factory and Industry" onclick="openModal()">
+        <div class="industry-name">Factory & Industry</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/office.png" alt="Office" onclick="openModal()">
+        <div class="industry-name">Offices</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/hospital.jpg" alt="Hospital" onclick="openModal()">
+        <div class="industry-name">Hospitals</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/hotels.webp" alt="Hotel and Restaurant" onclick="openModal()">
+        <div class="industry-name">Hotels & Restaurants</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/school.jpg" alt="School and College" onclick="openModal()">
+        <div class="industry-name">Schools & Colleges</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/warehouses.jpg" alt="Warehouse" onclick="openModal()">
+        <div class="industry-name">Warehouses</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/shop.jpg" alt="Shop and Showroom" onclick="openModal()">
+        <div class="industry-name">Shops & Showrooms</div>
+      </div>
+      <div class="industry">
+        <img src="./assests/flat.webp" alt="Residential Building" onclick="openModal()">
+        <div class="industry-name">Residential</div>
+      </div>
+    </div>
+    <div class="industries-mobile-hint">Swipe to explore industries</div>
+  </div>
+</section>
+
+<!--NEW CYLINDER DELIVERY -->
+<section class="cylinder-delivery" id="cylinder-delivery">
+  <div class="container">
+    <div class="cylinder-header"> 
+      <div class="kicker">OUR SUCCESSFUL DELIVERIES</div>
+      <h2>New Fire Extinguishers Delivered to Site</h2>
+      <p>Reliable fire extinguisher supply with safe handling and professional delivery.</p>
+    </div>
+
+    <div class="cylinder-carousel">
+      <div class="cylinder-track">
+        <div class="cylinder-slide active">
+          <img src="./assests/install.jpeg" alt="New fire extinguisher delivery">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/installed.jpeg" alt="New fire extinguisher supply">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/install2.jpeg" alt="Fire extinguishers delivered to site">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/Providingcertificate2.jpeg" alt="New fire extinguisher cylinders">
+        </div>
+        <div class="cylinder-slide">
+          <img src="./assests/Providingcertificat3.jpeg" alt="New fire extinguisher cylinders">
+        </div>
+      </div>
+
+      <button class="cylinder-arrow cylinder-prev" type="button" aria-label="Previous image">
+        &#10094;
+      </button>
+
+      <button class="cylinder-arrow cylinder-next" type="button" aria-label="Next image">
+        &#10095;
+      </button>
+
+      <div class="cylinder-dots">
+        <button class="cylinder-dot active" type="button" aria-label="Slide 1"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 2"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 3"></button>
+        <button class="cylinder-dot" type="button" aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- VISUAL SERVICE PROCESS -->
+  <!-- <section id="process" class="visual-process">
+    <div class="container">
+
+      <div class="process-header">
+        <div class="kicker">Our service process</div>
+        <h1 class="extType">What Actually Happens?</h1>
+        <p>7-step fire extinguisher servicing process.</p>
+      </div>
+
+      <div class="process-layout">
+        <div class="step-list">
+
+          <button class="step active" type="button" data-img="./assests/reqCollection.png"
+            data-title="Requirement Collection"
+            data-description="We verify the extinguisher quantity, type, capacity and site requirements.">
+
+            <span class="num">01</span>
+            <span class="step-text">
+              <strong>Requirement Collection</strong>
+              <small>Quantity, type & site details</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+          <button class="step" type="button" data-img="./assests/phyInspection.png" data-title="Physical Inspection"
+            data-description="Every extinguisher is checked for physical condition, corrosion, hose, nozzle, handle and safety components.">
+
+            <span class="num">02</span>
+            <span class="step-text">
+              <strong>Physical Inspection</strong>
+              <small>Condition & safety checks</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+          <button class="step" type="button" data-img="./assests/agentRemoval.png" data-title="Old Agent Removal"
+            data-description="Existing extinguishing agent is removed where applicable and the cylinder is cleaned before refilling.">
+
+            <span class="num">03</span>
+            <span class="step-text">
+              <strong>Old Agent Removal</strong>
+              <small>Removal & internal cleaning</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+          <button class="step" type="button" data-img="./assests/refilling.png" data-title="Refilling"
+            data-description="The extinguisher is refilled with the appropriate extinguishing agent according to its type.">
+
+            <span class="num">04</span>
+            <span class="step-text">
+              <strong>Refilling</strong>
+              <small>Correct agent & quantity</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+
+          <button class="step" type="button" data-img="./assests/sticker.png" data-title="Sticker & Tagging"
+            data-description="Each serviced extinguisher is identified with service and next-due information.">
+
+            <span class="num">05</span>
+            <span class="step-text">
+              <strong>Sticker & Tagging</strong>
+              <small>Service & due-date details</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+          <button class="step" type="button" data-img="./assests/reinstall.png" data-title="Reinstallation"
+            data-description="After servicing and verification, extinguishers are returned to their designated locations.">
+
+            <span class="num">06</span>
+            <span class="step-text">
+              <strong>Reinstallation</strong>
+              <small>Back to designated locations</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+          <button class="step" type="button" data-img="./assests/documentation.png" data-title="Documentation"
+            data-description="Service records, quantity summaries and applicable deficiency observations are submitted to the client.">
+
+            <span class="num">07</span>
+            <span class="step-text">
+              <strong>Documentation</strong>
+              <small>Records & service summary</small>
+            </span>
+            <span class="step-arrow">↗</span>
+          </button>
+
+        </div>
+        <div class="process-visual">
+
+          <div class="process-image-wrap" onclick="openModal()">
+            <img id="processImg" src="./assests/reqCollection.png" alt="Requirement collection process">
+            <span class="visual-step-number" id="visualStepNumber">
+              STEP 01 / 07
+            </span>
+          </div>
+
+          <div class="process-caption">
+            <div>
+              <span class="caption-label">CURRENT STEP</span>
+              <h3 id="processTitle">
+                Requirement Collection
+              </h3>
+              <p id="processDescription">
+                We verify the extinguisher quantity, type,
+                capacity and site requirements.
+              </p>
+            </div>
+
+            <div class="process-progress">
+              <div class="progress-track">
+                <div class="progress-fill" id="processProgress"></div>
+              </div>
+              <small id="progressText">1 of 7 steps</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section> -->
+
+
+  <section id="faq">
+    <div class="container">
+      <div class="head">
+        <div class="kicker client">Client questions</div>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item"><button class="faq-q">Does the brand really matter? Any brand will do.<span
+              class="plus">+</span></button>
+          <div class="faq-a">Every brand has to meet different safety testing standards. Non-branded cylinders carry a higher
+            risk of bursting under pressure. IS/UL/FM-approved extinguishers are tested at pressures of 35–50 bar, whereas local
+            cylinders may fail at just 10–12 bar. Branded products offer reliability, a longer service life, and inspection
+            approval.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How many fire extinguishers will need to be installed? Just one is enough.<span class="plus">+</span>
+          </button>
+          <div class="faq-a">the quantity and type of extinguishers are calculated based on the area, height, and occupancy of your premises. According to the NBC, one extinguisher is required for every 200 m², with a maximum walking distance of 15 metres to reach one. If the area is large, one extinguisher may not be sufficient to provide adequate coverage and protection.
+          </div>
+        </div>
+
+
+        <div class="faq-item"><button class="faq-q">Do you just refill the extinguisher or do you also change the sticker?<span
+              class="plus">+</span></button>
+          <div class="faq-a">
+            We follow the complete refilling process — pre-weighing, emptying, internal cleaning, MAP powder refilling, nitrogen re-pressurization, or leakage testing. We check every cylinder’s pressure gauge reading and verify its weight. We do not simply apply a new sticker. At The Fire Wala, you receive a refill certificate, tag, and photographic proof along with the refilling service. This process is defined under the NBC and IS 2190.
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-q">Your refilling charges are higher; I can get it done cheaper in the market.<span
+              class="plus">+</span>
+            </button>
+          <div class="faq-a">Cheap refilling may save money in the short term, but it can lead to long-term risks. Most low-grade refilling services in the market use non-MAP powder and non-certified gas, which can cause nozzle blockages and pressure loss within 3–4 months. We use ISI-certified MAP-90 powder and pure nitrogen pressure to ensure that the extinguisher remains stable for 12 months. Cheap refilling can mean false safety and real risk.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Will I receive any proof after refilling?
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">After refilling, we provide you with a Refilling Certificate, Test Report, and Sticker (Date & Next Due). We maintain photographic proof of every cylinder. You will receive valid evidence that can be presented during Fire Officer inspections. We believe in transparency and accountability.
+          </div>
+        </div>
+
+         <div class="faq-item">
+          <button class="faq-q">What if the cylinder does not work during a fire?
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">We pressure-test and leak-test every extinguisher and attach a ‘Ready for Use’ tag. If a cylinder fails during its AMC period, we provide a free replacement. However, if timely refilling is not carried out, the pressure naturally drops, increasing the risk of failure during a fire. Timely refilling means a working system.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Why should I buy a new extinguisher instead of reusing the old one?
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">A cylinder has a lifespan of 10 years and must undergo hydrostatic testing every five years. The chances of corrosion or fatigue increase in old cylinders, and they may even burst. The NBC and Fire Department can reject old or expired cylinders. Buying a new system ensures safety and compliance.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do you provide free training?
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">Yes, absolutely, During installation and AMC visits, we train your staff on extinguisher types and the PASS technique (Pull, Aim, Squeeze, Sweep), as well as evacuation practices. This training is mandatory according to the NBC.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT FEEDBACK & GOOGLE REVIEWS -->
+
+
+<section class="feedback-section" id="feedback">
+<div class="container">
+<div class="feedback-header">
+<div class="kicker">Client Feedback</div>
+<h2 class="extType">What Our Clients Say</h2>
+<p>Real experiences from businesses that trust The Fire Wala for their fire safety requirements.</p>
+</div>
+
+<!-- DESKTOP/TABLET VIDEO GRID -->
+<div class="feedback-video-grid">
+<div class="feedback-video-card">
+<div class="feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/clent1.png">
+<source src="./assests/videos/feedback1.mp4" type="video/mp4">
+</video>
+</div>
+<div class="feedback-video-info">
+<strong>Client Experience</strong>
+<span>Fire Extinguisher Servicing</span>
+</div>
+</div>
+
+<div class="feedback-video-card">
+<div class="feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/client2.png">
+<source src="./assests/videos/feedback2.mp4" type="video/mp4">
+</video>
+</div>
+<div class="feedback-video-info">
+<strong>Client Experience</strong>
+<span>Fledge Institute of Aviation and Hospitality</span>
+</div>
+</div>
+
+<div class="feedback-video-card">
+<div class="feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/client3.png">
+<source src="./assests/videos/feedback3.mp4" type="video/mp4">
+</video>
+</div>
+<div class="feedback-video-info">
+<strong>Client Experience</strong>
+<span>Training Video</span>
+</div>
+</div>
+</div>
+
+<!-- DESKTOP/TABLET GOOGLE REVIEWS -->
+<div class="google-review-heading">
+<div class="google-rating">
+<span class="google-star">★</span>
+<strong>Google Reviews</strong>
+</div>
+</div>
+
+<div class="google-review-grid">
+<div class="google-review-card">
+<img src="./assests/videos/review1.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+<div class="google-review-card">
+<img src="./assests/videos/review2.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+<div class="google-review-card">
+<img src="./assests/videos/review3.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+<div class="google-review-card">
+<img src="./assests/videos/review4.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+<div class="google-review-card">
+<img src="./assests/videos/review5.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+</div>
+
+<!-- MOBILE COMBINED CAROUSEL -->
+<div class="mobile-feedback-carousel">
+<div class="mobile-feedback-track">
+
+<div class="mobile-feedback-card">
+<div class="mobile-feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/clent1.png">
+<source src="./assests/videos/feedback1.mp4" type="video/mp4">
+</video>
+</div>
+<div class="mobile-feedback-info">
+<strong>Client Experience</strong>
+<span>Fire Extinguisher Servicing</span>
+</div>
+</div>
+
+<div class="mobile-feedback-card">
+<div class="mobile-feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/client2.png">
+<source src="./assests/videos/feedback2.mp4" type="video/mp4">
+</video>
+</div>
+<div class="mobile-feedback-info">
+<strong>Client Experience</strong>
+<span>Fledge Institute of Aviation and Hospitality</span>
+</div>
+</div>
+
+<div class="mobile-feedback-card">
+<div class="mobile-feedback-video">
+<video controls preload="metadata" playsinline poster="./assests/videos/client3.png">
+<source src="./assests/videos/feedback3.mp4" type="video/mp4">
+</video>
+</div>
+<div class="mobile-feedback-info">
+<strong>Client Experience</strong>
+<span>Training Video</span>
+</div>
+</div>
+
+<div class="mobile-feedback-card review-slide">
+<img src="./assests/videos/review1.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+
+<div class="mobile-feedback-card review-slide">
+<img src="./assests/videos/review2.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+
+<div class="mobile-feedback-card review-slide">
+<img src="./assests/videos/review3.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+
+<div class="mobile-feedback-card review-slide">
+<img src="./assests/videos/review4.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+
+<div class="mobile-feedback-card review-slide">
+<img src="./assests/videos/review5.png" alt="Google review from a Fire Wala customer" loading="lazy">
+</div>
+
+</div>
+</div>
+
+<div class="mobile-feedback-hint">
+<span>Swipe to view more</span>
+</div>
+
+</div>
+</section>
+
+
+  <!-- <section class="final">
+    <div class="container">
+      <div>Ready to get started?</div>
+      <h2>Is your fire protection ready?</h2>
+      <p>Tell us about your premises and requirement. Request a quotation for supply, inspection, servicing or
+        refilling.</p><button class="btn primary" onclick="openModal()">Book a service now!</button>
+    </div>
+  </section> -->
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <!-- Company Logo -->
+      <div class="footer-logo">
+        <img src="./assests/MSD_LOGO_ISO.png" alt="MSD Engineering - The Fire Wala">
+      </div>
+
+      <!-- Services -->
+      <div class="footer-services">
+        <h3>Our Services</h3>
+        <p>
+          Fire Extinguisher Supply & Refilling
+          <span>•</span> Hydrant
+          <span>•</span> Sprinkler
+          <span>•</span> Fire Alarm
+          <span>•</span> AMC
+          <span>•</span> Demonstration
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <a href="tel:+917772078601">
+          +91 77720-78601
+        </a>
+      </div>
+
+      <!-- Address -->
+      <div class="footer-address">
+        <h3>Visit Us</h3>
+        <p>
+          Parashuram Chowk, Safoorah Complex,
+          Office No. G04, Stadium Road,
+          in front of Kota, Raipur,
+          Chhattisgarh – 492010
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© The Fire Wala | MSD Engineering</p>
+      <a class="privacy" href="https://thefirewala.com/privacy-policy">Privacy Policy </a>
+    </div>
+  </footer>
+
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/917772078610?text=Hello%20The%20Fire%20Wala%2C%20I%20need%20fire%20extinguisher%20service."
+    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="whatsapp-icon">
+      <i class="fab fa-whatsapp" style="color: #ebf9f0; font-size:40px;"></i>
+
+    </span>
+  </a>
+
+  <!-- Existing Floating Get a Quote Button -->
+  <button class="float" onclick="openModal()">
+    Get a Free Quote
+  </button>
+
+
+
+
+  <!-- MODAL: Outer container -->
+  <div class="modal" id="modal">
+
+    <!-- Modal box -->
+    <div class="form">
+
+      <button class="close" type="button" onclick="closeModal()">
+        ×
+      </button>
+
+      <div id="formBox">
+
+        <h2>Book a service</h2>
+        <p class="intro">
+          Share your requirement and The Fire Wala team can contact you.
+        </p>
+
+        <!--  MODAL FORM -->
+
+
+        <form id="modalQuoteForm">
+
+          <div class="fg">
+
+            <div class="form-group">
+              <label for="modalClientName">
+                Full Name <span class="star">*</span>
+              </label>
+              <input type="text" id="clientName" name="clientName" placeholder="Enter your name"
+              maxlength="50" pattern="[A-Za-z ]+" autocomplete="name" title="Name should contain alphabets and spaces only" required>
+            </div>
+
+            <div class="form-group">
+              <label for="modalPhone">
+                Phone Number <span class="star">*</span>
+              </label>
+               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+              maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" title="Please enter exactly 10 digits." required>
+            </div>
+
+            <div class="form-group">
+              <label for="modalEmail">
+                Email id <span class="star">*</span>
+              </label>
+              <input type="email" id="modalEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="modalCompany">Company Name</label>
+              <input type="text" id="modalCompany" name="company" placeholder="Enter company name"
+              maxlength="100" pattern="[A-Za-z ]*" title="Company name should contain alphabets and spaces only.">
+            </div>
+
+            <div class="form-group">
+              <label for="modalQuantity">
+                Number of Extinguishers
+              </label>
+              <input type="number" id="modalQuantity" name="quantity" min="1" placeholder="Minimum quantity: 1">
+              <small class="input-hint">Minimum: 1</small>
+            </div>
+
+            <div class="form-group full">
+              <label for="modalServiceType">
+                Service required <span class="star">*</span>
+              </label>
+              <select id="modalServiceType" name="serviceType" required>
+                <option value="">Select service</option>
+                <option value="New Extinguisher Supply">
+                  New Extinguisher Supply
+                </option>
+                <option value="Refilling / Servicing">
+                  Refilling / Servicing
+                </option>
+                <option value="Inspection">Inspection</option>
+                <option value="Replacement">Replacement</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <button class="btn primary" style="width:100%" type="submit">
+                Submit Request
+              </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- Success message OUTSIDE the form -->
+      <div class="success" id="success" style="display:none">
+        <div class="big">✓</div>
+        <h2>Request captured!</h2>
+        <p>
+          Your request has been submitted successfully.
+          The Fire Wala team can contact you soon.
+        </p>
+
+        <button class="btn primary" type="button" onclick="closeModal()">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

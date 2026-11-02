@@ -101,7 +101,7 @@ if (modal) {
 
 // LOCAL BACKEND
 const API_URL =
-   "https://the-fire-wala.onrender.com/api/service-requests";
+   "https://extinguisher-service.onrender.com/api/service-requests";
 
 
 // Common function: send form data to backend

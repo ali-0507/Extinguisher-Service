@@ -15,6 +15,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
   "https://the-fire-wala.vercel.app",
+  "https://thefirewala.in",
+  "https://www.thefirewala.in"
 ];
 app.use(
   cors({

@@ -1,40 +1,52 @@
-
-const hamburger = document.getElementById("hamburger");
+ const hamburger = document.getElementById("hamburger");
 const navlinks = document.getElementById("navlinks");
 
-hamburger.addEventListener("click", function () {
+if (hamburger && navlinks) {
 
-    // Toggle the mobile menu
-    navlinks.classList.toggle("show");
+    hamburger.addEventListener("click", function () {
 
-    // Toggle hamburger animation
-    hamburger.classList.toggle("active");
+        navlinks.classList.toggle("show");
+        hamburger.classList.toggle("active");
 
-    // Update accessibility state
-    const isOpen = navlinks.classList.contains("show");
+        const isOpen = navlinks.classList.contains("show");
 
-    hamburger.setAttribute("aria-expanded", isOpen);
+        hamburger.setAttribute("aria-expanded", isOpen);
 
-    hamburger.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-});
+        hamburger.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
 
-// Close menu after clicking a navigation link
-navlinks.querySelectorAll("a").forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navlinks.classList.remove("show");
-        hamburger.classList.remove("active");
-
-        hamburger.setAttribute("aria-expanded", "false");
-        hamburger.setAttribute("aria-label", "Open navigation menu");
     });
 
-});
+    navlinks.querySelectorAll("a").forEach(function (link) {
 
+        link.addEventListener("click", function () {
+
+            navlinks.classList.remove("show");
+            hamburger.classList.remove("active");
+
+            hamburger.setAttribute("aria-expanded", "false");
+            hamburger.setAttribute("aria-label", "Open navigation menu");
+
+        });
+
+    });
+
+    const mobileBook = navlinks.querySelector(".mobile-book");
+
+    if (mobileBook) {
+        mobileBook.addEventListener("click", function () {
+
+            navlinks.classList.remove("show");
+            hamburger.classList.remove("active");
+
+            hamburger.setAttribute("aria-expanded", "false");
+            hamburger.setAttribute("aria-label", "Open navigation menu");
+
+        });
+    }
+}
 // Close menu when clicking Book a service
 navlinks.querySelector(".mobile-book").addEventListener(
     "click",
@@ -369,27 +381,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const quantityInput = document.getElementById("quantity");
 
-quantityInput.addEventListener("input", function () {
-    const quantity = Number(this.value);
+if (quantityInput) {
+    quantityInput.addEventListener("input", function () {
 
-    if (this.value === "") {
-        this.setCustomValidity("");
-    } else if (!Number.isInteger(quantity)) {
-        this.setCustomValidity(
-            "Please enter a whole number."
-        );
-    } else if (quantity < 1) {
-        this.setCustomValidity(
-            "Minimum quantity should be 1."
-        );
-    } else if (quantity > 100) {
-        this.setCustomValidity(
-            "Maximum quantity allowed is 100."
-        );
-    } else {
-        this.setCustomValidity("");
-    }
-});
+        const quantity = Number(this.value);
+
+        if (this.value === "") {
+            this.setCustomValidity("");
+
+        } else if (!Number.isInteger(quantity)) {
+            this.setCustomValidity(
+                "Please enter a whole number."
+            );
+
+        } else if (quantity < 1) {
+            this.setCustomValidity(
+                "Minimum quantity should be 1."
+            );
+
+        } else if (quantity > 100) {
+            this.setCustomValidity(
+                "Maximum quantity allowed is 100."
+            );
+
+        } else {
+            this.setCustomValidity("");
+        }
+
+    });
+}
 
 // visual step number and progress bar
 

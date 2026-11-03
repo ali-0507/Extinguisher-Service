@@ -1,5 +1,5 @@
 const express = require("express");
-const { Pool } = require("pg");
+// const { Pool } = require("pg");
 const cors = require("cors");
 require("dotenv").config();
 const { sendToGoogleSheets } = require("./utils/googleSheets");
@@ -25,30 +25,30 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.use(express.json());
+app.use(express.json({ limit: "1mb" }));
 
 
 
 // POSTGRESQL DATABASE CONNECTION
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl:
-    process.env.NODE_ENV === "production"
-      ? { rejectUnauthorized: false }
-      : false,
-});
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl:
+//     process.env.NODE_ENV === "production"
+//       ? { rejectUnauthorized: false }
+//       : false,
+// });
 
 // Test database connection
-pool
-  .query("SELECT NOW()")
-  .then((result) => {
-    console.log("✅ PostgreSQL database connected!");
-    console.log("🕒 Database time:", result.rows[0].now);
-  })
-  .catch((error) => {
-    console.error("❌ PostgreSQL connection error:", error.message);
-  });
+// pool
+//   .query("SELECT NOW()")
+//   .then((result) => {
+//     console.log("✅ PostgreSQL database connected!");
+//     console.log("🕒 Database time:", result.rows[0].now);
+//   })
+//   .catch((error) => {
+//     console.error("❌ PostgreSQL connection error:", error.message);
+//   });
 
 // =====================================================
 // BASIC / HEALTH CHECK ROUTE
@@ -61,26 +61,41 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/api/health", async (req, res) => {
-  try {
-    await pool.query("SELECT 1");
+// app.get("/api/health", async (req, res) => {
+//   try {
+//     await pool.query("SELECT 1");
 
-    res.status(200).json({
-      success: true,
-      message: "Backend and database are working!",
-      database: "connected",
-    });
-  } catch (error) {
-    console.error("Health check error:", error.message);
+//     res.status(200).json({
+//       success: true,
+//       message: "Backend and database are working!",
+//       database: "connected",
+//     });
+//   } catch (error) {
+//     console.error("Health check error:", error.message);
 
-    res.status(500).json({
-      success: false,
-      message: "Database connection failed.",
-      database: "disconnected",
-    });
-  }
+//     res.status(500).json({
+//       success: false,
+//       message: "Database connection failed.",
+//       database: "disconnected",
+//     });
+//   }
+// });
+
+
+app.get("/api/health", (req, res) => {
+  const sheetsConfigured = Boolean(
+    process.env.GOOGLE_SHEETS_WEBHOOK_URL &&
+    process.env.GOOGLE_SHEETS_SECRET
+  );
+
+  res.status(sheetsConfigured ? 200 : 503).json({
+    success: sheetsConfigured,
+    message: sheetsConfigured
+      ? "Backend and Google Sheets configuration are ready."
+      : "Google Sheets environment variables are missing.",
+    googleSheets: sheetsConfigured ? "configured" : "not configured",
+  });
 });
-
 
 // POST API: SAVE CUSTOMER SERVICE REQUEST
 app.post("/api/service-requests", async (req, res) => {
@@ -93,16 +108,19 @@ app.post("/api/service-requests", async (req, res) => {
       service_type,
       additional_details,
       extinguisher_quantity,
-    } = req.body;
+    } = req.body || {};
 
     // -------------------------------------------------
     // 1. REQUIRED FIELD VALIDATION
     // -------------------------------------------------
 
     if (
-      !client_name?.trim() ||
-      !phone?.trim() ||
-      !service_type?.trim()
+      typeof client_name !== "string" ||
+      !client_name.trim() ||
+      typeof phone !== "string" ||
+      !phone.trim() ||
+      typeof service_type !== "string" ||
+      !service_type.trim()
     ) {
       return res.status(400).json({
         success: false,
@@ -166,99 +184,157 @@ app.post("/api/service-requests", async (req, res) => {
     }
 
     // -------------------------------------------------
-    // 5. PREPARE DATA
+    // 5. PREPARE REQUEST DATA
     // -------------------------------------------------
 
-    const cleanClientName = client_name.trim();
-    const cleanCompanyName =
-      company_name?.trim() || null;
-    const cleanServiceType = service_type.trim();
-    const cleanAdditionalDetails =
-      additional_details?.trim() || null;
+   const serviceRequest = {
+      id: crypto.randomUUID(),
+
+      client_name: client_name.trim(),
+      phone: cleanPhone,
+      email: cleanEmail,
+
+      company_name:
+        typeof company_name === "string"
+          ? company_name.trim() || null
+          : null,
+
+      service_type: service_type.trim(),
+
+      additional_details:
+        typeof additional_details === "string"
+          ? additional_details.trim() || null
+          : null,
+
+      extinguisher_quantity: quantity,
+
+      status: "New",
+
+      created_at: new Date().toISOString(),
+    };
 
     // -------------------------------------------------
     // 6. INSERT DATA INTO POSTGRESQL
     // -------------------------------------------------
 
     
-const query = `
-  INSERT INTO service_request (
-    client_name,
-    phone,
-    email,
-    company_name,
-    service_type,
-    additional_details,
-    extinguisher_quantity
-  )
-  VALUES ($1, $2, $3, $4, $5, $6, $7)
-  RETURNING
-    id,
-    client_name,
-    phone,
-    email,
-    company_name,
-    service_type,
-    additional_details,
-    extinguisher_quantity,
-    status,
-    created_at
-`;
+// const query = `
+//   INSERT INTO service_request (
+//     client_name,
+//     phone,
+//     email,
+//     company_name,
+//     service_type,
+//     additional_details,
+//     extinguisher_quantity
+//   )
+//   VALUES ($1, $2, $3, $4, $5, $6, $7)
+//   RETURNING
+//     id,
+//     client_name,
+//     phone,
+//     email,
+//     company_name,
+//     service_type,
+//     additional_details,
+//     extinguisher_quantity,
+//     status,
+//     created_at
+// `;
 
-    const values = [
-      cleanClientName,
-      cleanPhone,
-      cleanEmail,
-      cleanCompanyName,
-      cleanServiceType,
-      cleanAdditionalDetails,
-      quantity,
-    ];
+//     const values = [
+//       cleanClientName,
+//       cleanPhone,
+//       cleanEmail,
+//       cleanCompanyName,
+//       cleanServiceType,
+//       cleanAdditionalDetails,
+//       quantity,
+//     ];
 
-const result = await pool.query(query, values);
+// const result = await pool.query(query, values);
 
-const savedRequest = result.rows[0];
+// const savedRequest = result.rows[0];
 
-res.status(201).json({
-  success: true,
-  message: "Service request saved successfully",
-  data: savedRequest,
-});
+// res.status(201).json({
+//   success: true,
+//   message: "Service request saved successfully",
+//   data: savedRequest,
+// });
 
 
+   // -------------------------------------------------
+    // 6. SAVE DIRECTLY TO GOOGLE SHEETS
+    // -------------------------------------------------
+
+    console.log(
+      "📩 New service request received:",
+      serviceRequest.id
+    );
+
+    await sendToGoogleSheets(serviceRequest);
+
+    console.log(
+      "✅ Service request saved to Google Sheets:",
+      serviceRequest.id
+    );
 // GOOGLE SHEETS SYNC - BACKGROUND
 
-setImmediate(() => {
-  sendToGoogleSheets(savedRequest)
-    .then(() => {
-      console.log(
-        "✅ Request synced to Google Sheets:",
-        savedRequest.id
-      );
-    })
-    .catch((error) => {
-      console.error(
-        "⚠️ Google Sheets sync failed:",
-        error.message
-      );
+// setImmediate(() => {
+//   sendToGoogleSheets(savedRequest)
+//     .then(() => {
+//       console.log(
+//         "✅ Request synced to Google Sheets:",
+//         savedRequest.id
+//       );
+//     })
+//     .catch((error) => {
+//       console.error(
+//         "⚠️ Google Sheets sync failed:",
+//         error.message
+//       );
+//     });
+// });
+
+
+// } catch (error) {
+//   console.error(
+//     "❌ Error saving service request:",
+//     error.message
+//   );
+
+//   return res.status(500).json({
+//     success: false,
+//     message:
+//       "Unable to save service request. Please try again later.",
+//   });
+// }
+// });
+
+
+// -------------------------------------------------
+    // 7. SEND SUCCESS RESPONSE
+    // -------------------------------------------------
+
+    return res.status(201).json({
+      success: true,
+      message: "Service request saved successfully.",
+      data: serviceRequest,
     });
+
+  } catch (error) {
+    console.error(
+      "❌ Error saving service request:",
+      error.message
+    );
+
+    return res.status(502).json({
+      success: false,
+      message:
+        "Unable to save your request right now. Please try again later.",
+    });
+  }
 });
-
-
-} catch (error) {
-  console.error(
-    "❌ Error saving service request:",
-    error.message
-  );
-
-  return res.status(500).json({
-    success: false,
-    message:
-      "Unable to save service request. Please try again later.",
-  });
-}
-});
-
 // =====================================================
 // 404 ROUTE
 // =====================================================

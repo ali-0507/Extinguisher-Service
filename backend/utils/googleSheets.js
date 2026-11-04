@@ -3,47 +3,39 @@ async function sendToGoogleSheets(request) {
   const secret = process.env.GOOGLE_SHEETS_SECRET;
 
   if (!url || !secret) {
-    throw new Error(
-      "Google Sheets environment variables missing."
-    );
+    throw new Error("Google Sheets environment variables missing.");
   }
 
   const response = await fetch(url, {
     method: "POST",
-
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
-
     body: JSON.stringify({
       ...request,
-      secret,
+      secret
     }),
-
-    redirect: "follow",
+    redirect: "follow"
   });
 
   const responseText = await response.text();
+
+  console.log("Google Sheets HTTP status:", response.status);
+  console.log("Google Sheets response:", responseText.slice(0, 1000));
 
   let result;
 
   try {
     result = JSON.parse(responseText);
   } catch {
-    console.error(
-      "Google Sheets returned a non-JSON response:",
-      responseText.slice(0, 500)
-    );
-
     throw new Error(
-      "Google Sheets returned an invalid response."
+      "Google Sheets returned a non-JSON response."
     );
   }
 
   if (!response.ok || !result.success) {
     throw new Error(
-      result.message ||
-      `Google Sheets HTTP error: ${response.status}`
+      result.message || `Google Sheets HTTP error: ${response.status}`
     );
   }
 
